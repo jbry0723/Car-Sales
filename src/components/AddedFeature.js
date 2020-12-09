@@ -1,5 +1,5 @@
 import React from 'react';
-import {subtractFeature} from "../actions/carAction"
+import {subtractFeature, subtractPrice}  from "../actions/carAction"
 import {connect} from "react-redux"
 const AddedFeature = props => {
  
@@ -7,6 +7,7 @@ const AddedFeature = props => {
   const handleClick = e => {
     e.preventDefault();
     props.subtractFeature(props.feature, props.car.features)
+    props.subtractPrice (props.feature.price)
 }
   return (
     <li>
@@ -28,4 +29,4 @@ const mapStateToProps=state=> {
   }
 }
 
-export default connect(mapStateToProps,{subtractFeature} )(AddedFeature)
+export default connect(mapStateToProps,{subtractPrice, subtractFeature} )(AddedFeature)

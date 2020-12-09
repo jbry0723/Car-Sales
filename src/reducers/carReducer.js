@@ -20,10 +20,10 @@ export const initialState={
           case "ADD_FEATURE":
             return{...state, car:{...state.car,features:action.payload}, additionalPrice: state.additionalPrice+action.payload[action.payload.length-1].price}
           case "SUBTRACT_FEATURE":
-            return{...state, car:{...state.car,features:action.payload}} 
+            return{...state, car:{...state.car,features:action.payload}}
           case "SUBTRACT_PRICE":
             console.log("triggering!")
-            return{...state,additionalPrice:action.payload} 
+            return{...state,additionalPrice:state.additionalPrice+action.payload} 
             
           default:
               return(state);
